@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "outDir": "./typescript",
         "allowJs": true,
         "charset": "UTF-8",
         "jsx": "react-jsx",

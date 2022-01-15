@@ -1,5 +1,5 @@
-import { CreditScore, GitHub } from "@mui/icons-material";
-import { AppBar, Button, colors, Toolbar, Typography } from "@mui/material";
+import { CreditScore, GitHub, Brightness7, Brightness4 } from "@mui/icons-material";
+import { AppBar, Button, colors, FormControlLabel, FormGroup, Switch, Toolbar, Typography, useMediaQuery } from "@mui/material";
 import React from "react"
 
 import muilogo from "../../images/mui-logo.svg";
@@ -7,9 +7,13 @@ import reactlogo from "../../images/react-logo.svg";
 
 import icon from "../../images/icon.webp";
 import "./Appbar.scss";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Appbar()
 {
+    let isMobile = useMediaQuery("(max-width: 768px)");
+    let {darkmode} = useSelector(e => e.defaultRedux);
+    let dispatch = useDispatch();
     return <>
         <AppBar position="static">
             <Toolbar>
@@ -22,6 +26,13 @@ export default function Appbar()
                     Abdussamed ULUTAŞ
                 </Typography>
                 <div style={{marginLeft:"auto"}}></div>
+                <Button
+                    color="inherit"
+                    startIcon={darkmode ? <Brightness7 /> : <Brightness4 />}
+                    onClick={e => dispatch({type:"toggledarkmode"})}
+                >
+                    {!isMobile ? (darkmode ? "Açık Mod" : "Koyu Mod") : ""}
+                </Button>
                 <Button
                     sx={{display:{sm:"flex",xs:"none"}}}
                     color="inherit"

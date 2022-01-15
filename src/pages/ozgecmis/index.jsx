@@ -1,13 +1,15 @@
 import React, { useEffect } from "react"
 import { Box } from "@mui/system";
-import { Card, CardContent, CardHeader, Divider, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Card, CardContent, CardHeader, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery } from "@mui/material";
 import moment from "moment";
+import { Facebook, GitHub, Google, Instagram, Twitter } from "@mui/icons-material";
 
 
 export default function Ozgecmis()
 {
     let age = moment("0001-01-01").add({days:moment(moment.now()).diff("1998-03-17","days")},"years").get("year");
 
+    let isMobile = useMediaQuery("(max-width: 768px)");
     useEffect(()=>{
         document.title = "Abdussamed ULUTAŞ | Özgeçmiş";
     },[]);
@@ -19,120 +21,151 @@ export default function Ozgecmis()
                 xs:"100%",
                 md: "25vw"
             },
-            maxWidth:{sm:"400px"},
-            minWidth:{sm:"300px"}
+            maxWidth:{sm:"1000px"},
+            minWidth:{
+                sm:"100%",
+                xs:"100%",
+                md: "700px",
+                lg: "1000px"
+            }
         },
         maxWidth: "500px",
-        margin: 2
+        margin: "auto"
     };
 
     return <>
-        <dh.H1>Ben Kimim?</dh.H1>
         <Box display="flex" flexDirection="row" flexWrap="wrap" justifyContent="flex-start">
             <Box {...styleProps}>
                 <Card variant="elevation" elevation={3}>
-                    <CardHeader
-                        title={<dh.H2>Ben <b>Kim</b>im?</dh.H2>}
-                    />
                     <CardContent style={{textAlign:"justify"}}>
+                        <dh.H1 textAlign="center">Abdussamed ULUTAŞ</dh.H1>
+                        <dh.H2 textAlign="center">Kıdemli Yazılım Uzmanı | Yazılım Mimarisyeni | Full Stack Developer</dh.H2>
                         Adım Abdussamed ULUTAŞ ve {age} yaşındayım. Kendini güncel bilgisayar ağları ve web teknolojilerine adamış kıdemli yazılım
-                            uzmanı ve yönetim bilişim sistemleri uzmanıyım
-                    </CardContent>
-                </Card>
-            </Box>
-            <Box {...styleProps}>
-                <Card variant="elevation" elevation={3}>
-                    <CardHeader
-                        title={<dh.H2>Ben <b>Ne</b>yim?</dh.H2>}
-                    />
-                    <CardContent style={{textAlign:"justify"}}>
-                        <List dense={true}>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="kc tech arge bilişim firmasının arge ofisinde kıdemli yazılım uzmanıyım."/>
+                        uzmanıyım.
+                        <dh.H3 textAlign="center">Kişisel</dh.H3>
+                        <List>
+                            {[
+                                ["Yaş",age],
+                                ["Askerlik Durumu", "Tecilli"],
+                                ["Medeni Durumu", "Bekar"],
+                                ["Ehliyet", "B1 Sınıfı Ehliyet"],
+                                ["Yaşadığı Yer", "Türkiye / Kayseri"],
+                                ["Uzmanlık Alanı", "PHP, NodeJS, ES6, ReactJS, HTML5, SCSS ve diğer frontend teknolojileri"],
+                                ["Frameworkler", "Laravel, ReactJS, NodeJS, WebSocket, Hemex Text Mining, QT5 C++, ASP.NET"],
+                                ["Aşina Olduğu Teknolojiler","C/C++/C#, BashScript, TypeScript, Java, Selenium Otomasyon, FFMPEG"]
+                            ].map((e,arr,key) => {
+                                return <>
+                                {!isMobile ? <ListItem key={key}>
+                                    <ListItemText sx={{flex:5}}>
+                                        {e[0]}
+                                    </ListItemText>
+                                    <ListItemText sx={{flex:10}}>
+                                        {e[1]}
+                                    </ListItemText>
+                                </ListItem> : <ListItem key={key}>
+                                    <ListItemText secondary={e[1]}>
+                                        {e[0]}
+                                    </ListItemText>
+                                </ListItem>}
+                                <Divider />
+                                </>
+                            })}
+                        </List>
+                        <dh.H3 textAlign="center">Eğitim</dh.H3>
+                        <List>
+                            <ListItem>
+                                <ListItemText sx={{flex:10}} secondary="Yönetim Bilişim Sistemleri, Lisans">
+                                    Eskişehir Anadolu Üniversitesi
+                                </ListItemText>
                             </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Anadolu Üniversitesi açıköğretim fakültesinde öğrenciyim." />
+                            <Divider />
+                            <ListItem>
+                                <ListItemText secondary="Bilgisayar Programcılığı, Önlisans">
+                                    Kayseri Erciyes Üniversitesi
+                                </ListItemText>
                             </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Duha yazılım firmasında full stack web geliştiricisiyim." />
+                            <Divider />
+                            <ListItem>
+                                <ListItemText secondary="Lise">
+                                    Kayseri Anadolu İmam Hatip Lisesi
+                                </ListItemText>
                             </ListItem>
                         </List>
-                    </CardContent>
-                </Card>
-            </Box>
-            <Box {...styleProps}>
-                <Card variant="elevation" elevation={3}>
-                    <CardHeader
-                        title={<dh.H2>Ben <b>Nerede</b>yim?</dh.H2>}
-                    />
-                    <CardContent style={{textAlign:"justify"}}>
-                        <List dense={true}>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Sivaslıyım." />
+                        <dh.H3 textAlign="center">Tecrübe</dh.H3>
+                        <List>
+                            <ListItem>
+                                <ListItemText secondary="Kıdemli Yazılım Mühendisi, Javascript Uzmanı, ARGE Personeli">
+                                    KC Tek Arge Bilişim ve Enerji Sanayi ve Ticaret LTD. ŞTİ.
+                                </ListItemText>
                             </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Kayseride yaşıyorum." />
+                            <Divider />
+                            <ListItem>
+                                <ListItemText secondary="Yazılım Mimarisyeni, FrontEnd Developer, Javascript Uzmanı">
+                                    Duha Yazılım LTD. ŞTİ.
+                                </ListItemText>
                             </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Kayseride çalışıyorum." />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Eskişehir Üniversitesinde açıktan okuyorum" />
+                            <Divider />
+                            <ListItem>
+                                <ListItemText secondary="Full Stack Web Developer">
+                                    Toy Medya Reklam Tanıtım ve Prodüksiyon Ajansı LTD. ŞTİ.
+                                </ListItemText>
                             </ListItem>
                         </List>
-                    </CardContent>
-                </Card>
-            </Box>
-            <Box {...styleProps}>
-                <Card variant="elevation" elevation={3}>
-                    <CardHeader
-                        title={<dh.H2>Ben <b>Nasıl</b> Biriyim?</dh.H2>}
-                    />
-                    <CardContent style={{textAlign:"justify"}}>
-                        Gelişmelere oldukta açık, güncel teknolojiyi takip eden, hırslı ve heyecanlı,
-                        olabildiğinde alanında en iyi olmaya çalışan, kalite odaklı asosyal takım çalışmasına uygun birisiyim
-                    </CardContent>
-                </Card>
-            </Box>
-            <Box {...styleProps}>
-                <Card variant="elevation" elevation={3}>
-                    <CardHeader
-                        title={<dh.H2>Peki <b>Neden</b> Bu Sektördeyim?</dh.H2>}
-                    />
-                    <CardContent style={{textAlign:"justify"}}>
-                        Teknolojinin hiç bir zaman geriye doğru ilermediğinin en bariz kanıtı olan yazılım sektörünün
-                        bir üyesi olarak teknolojinin engin okyanusunda bir mercan bölgesi oluşturmak ve diğer geliştiricilere ve insanlara yararlı bir habitat sunabilmek en berrak vizyonumdur
-                    </CardContent>
-                </Card>
-            </Box>
-            <Box {...styleProps}>
-                <Card variant="elevation" elevation={3}>
-                    <CardHeader
-                        title={<dh.H2>Ben <b>Ne zaman</b>dır Yazılım Sektöründeyim?</dh.H2>}
-                    />
-                    <CardContent style={{textAlign:"justify"}}>
-                        <List dense={true}>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="16 yaşımda ilk basit web sayfamı hazırladım." />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="17 yaşımda Asp C#.NET Core MVC projemi yazdım." />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="18 yaşımda php ile tanıştım ve frameworkleri üzerinde düzenlemelar yaptım" />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="20 yaşımda javascriptin ES6 versiyonunu öğrenerek nodejs üzerinde çalışmaya başladım" />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="22 yaşımda cPanel, ssh, linux ve sunucu yönetimine aşina oldum" />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="23 yaşımda websoket, react, CSS3, webkit ve android studio öğrendim" />
-                            </ListItem>
-                            <ListItem style={{padding:0}}>
-                                <ListItemText disableTypography primary="Şuan react assemblyscript WebRTC ESNext Nodejs teknolojileri üzerinde çalışmalar yürütmekteyim" />
-                            </ListItem>
+                        <dh.H3 textAlign="center">Sosyal Medya Hesapları</dh.H3>
+                        <List>
+                            {[
+                                ["Github", <GitHub />, "/abdussamedulutas","https://github.com/abdussamedulutas"],
+                                ["Facebook",<Facebook/>,"/saQut","https://facebook.com/saQut"],
+                                ["Twitter",<Twitter/>,"@ownbubynter","https://twitter.com/ownbubynter"],
+                                ["Instagram",<Instagram />, "@abdussamedulutas","https://instagram.com/abdussamedulutas"],
+                                ["Google",<Google />, "@saqutsoftware","mailto:saqutsoftware@gmail.com"],
+                                ["Delphican",<Google />, "@saqutsoftware","mailto:saqutsoftware@gmail.com"]
+                            ].map((e,arr,key) => {
+                                return <>
+                                {!isMobile ? <ListItemButton key={key} onClick={() => window.open(e[3])}>
+                                    <ListItemIcon>
+                                        {e[1]}
+                                    </ListItemIcon>
+                                    <ListItemText sx={{flex:10}}>
+                                        {e[0]}
+                                    </ListItemText>
+                                    <ListItemText sx={{flex:20}}>
+                                        {e[2]}
+                                    </ListItemText>
+                                </ListItemButton> : <ListItemButton key={key} onClick={() => window.open(e[3])}>
+                                    <ListItemIcon>
+                                        {e[1]}
+                                    </ListItemIcon>
+                                    <ListItemText secondary={e[2]}>
+                                        {e[0]}
+                                    </ListItemText>
+                                </ListItemButton>}
+                                <Divider />
+                                </>
+                            })}
+                        </List>
+                        <dh.H3 textAlign="center">Referanslar</dh.H3>
+                        <List>
+                            {[
+                                ["Yasin İLKAYA", "https://yasinilkaya.com.tr/"],
+                                ["Yakup ULUTAŞ","https://yakupulutas.com/"]
+                            ].map((e,arr,key) => {
+                                return <>
+                                {!isMobile ? <ListItemButton key={key} onClick={() => window.open(e[1])}>
+                                    <ListItemText sx={{flex:10}}>
+                                        {e[0]}
+                                    </ListItemText>
+                                    <ListItemText sx={{flex:20}}>
+                                        {e[1]}
+                                    </ListItemText>
+                                </ListItemButton> : <ListItemButton key={key} onClick={() => window.open(e[1])}>
+                                    <ListItemText secondary={e[1]}>
+                                        {e[0]}
+                                    </ListItemText>
+                                </ListItemButton>}
+                                <Divider />
+                                </>
+                            })}
                         </List>
                     </CardContent>
                 </Card>
@@ -145,10 +178,41 @@ class dh{
     static H1(props)
     {
         return <Typography variant="h1" color="text.primary"  style={{margin:0,marginBottom:20,fontSize:"2em",fontWeight:700}} {...props} />
-        return <h1 style={{marginTop:0}} {...props} />;
     }
     static H2(props)
     {
-        return <h2 style={{margin:0,fontSize:".8em",fontWeight:100}} {...props} />;
+        return <Typography variant="h2" color="text.primary"  style={{margin:0,marginTop: -10,marginBottom:30,fontSize:"1.2em",fontWeight:300}} {...props} />
+    }
+    static H3(props)
+    {
+        return <Typography
+            variant="h3"
+            color="text.primary"
+            style={{marginBottom:30,marginTop:30,fontSize:"1em",fontWeight:500}}
+            {...props}
+            sx={{
+                display:"flex",
+                '&:after':{
+                    "content":"''",
+                    "flex":" 1",
+                    "display":"inline-block",
+                    "height":"1px",
+                    "backgroundColor":"#ffffff4f",
+                    "marginTop":"auto",
+                    "marginBottom":"auto",
+                    "marginLeft":"10px",
+                },
+                '&:before':{
+                    "content":"''",
+                    "flex":" 1",
+                    "display":"inline-block",
+                    "height":"1px",
+                    "backgroundColor":"#ffffff4f",
+                    "marginTop":"auto",
+                    "marginBottom":"auto",
+                    "marginRight":"10px"
+                }
+            }}
+        />
     }
 }
