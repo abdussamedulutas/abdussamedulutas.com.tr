@@ -17,7 +17,7 @@ export default function Appbar()
     return <>
         <AppBar position="static">
             <Toolbar>
-                <img src={icon} alt="Logo" className="logo-image" />
+                <img src={icon} alt="Logo" className="logo-image" onClick={e => dispatch({type:"openNavbar"})} />
                 <Typography
                     variant="h6"
                     noWrap

@@ -17,3 +17,16 @@ body{
 @import url(fonts/Ubuntu/style.css);
 @import url(fonts/Cantarell/style.css);
 @import url(fonts/FontAwesome/styles.min.css);
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #686868;
+    border: solid 1px#828282;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff1a;
+    border-radius: 5px;
+}
