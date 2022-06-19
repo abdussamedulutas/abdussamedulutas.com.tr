@@ -28,6 +28,10 @@ import StunTurn from "./pages/backend/turnstun/index"
 import Mariadb from "./pages/backend/mariadb/index"
 
 
+import MarjaroNedir from "./pages/manjaro/manjaronedir";
+import NedenManjaro from "./pages/manjaro/nedenmanjaro";
+
+
 
 import HemexJS from "./pages/myprojects/HemexJS/index";
 
@@ -91,6 +95,9 @@ function App()
                     <Route path="/frontend/cachestorage" component={cachestorage}/>
                     
                     <Route path="/github/hemexjs" component={HemexJS}/>
+
+                    <Route path="/manjaro/nedir" component={MarjaroNedir}/>
+                    <Route path="/manjaro/neden" component={NedenManjaro}/>
 
                     <Route path="/iletisim" component={Iletisim}/>
                     <Route exact path="/"> <Redirect /> </Route>

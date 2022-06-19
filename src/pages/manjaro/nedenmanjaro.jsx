@@ -3,10 +3,10 @@ import { Box } from "@mui/system";
 import { Card, CardContent, CardHeader, Divider, List, ListItem, ListItemText, Typography } from "@mui/material";
 import moment from "moment";
 
-export default function WebSocket()
+export default function NedenManjaro()
 {
     useEffect(()=>{
-        document.title = "Abdussamed ULUTAŞ | Cache Storage";
+        document.title = "Abdussamed ULUTAŞ | Manjaro OS";
     },[]);
 
     let cardProperty = {
@@ -21,54 +21,67 @@ export default function WebSocket()
     }
 
     return <>
-        <dh.H1>Cache Storage (Önbellek Depolama)</dh.H1>
+        <dh.H1>Neden Manjaro Linux OS</dh.H1>
         <Box display="flex" flexDirection="row" flexWrap="wrap">
             <Card {...cardProperty}>
                 <CardHeader
-                    title={<dh.H2>Önbellek nedir?</dh.H2>}
+                    title={<dh.H2>Kişiselleştirme</dh.H2>}
                 />
                 <CardContent style={{textAlign:"justify"}}>
-                    Çok sayfalı web siteleri, görüntü, ses, font veya stillerin yüksek çoğunluğunu
-                    diğer saylarda da tekrar tekrar kullanılmaktadır. Bir web sitesine girdiğinizde
-                    o sitenin örneğin logosunu her sayfa geçişinizde tekrar tekrar indirilerek ağ
-                    üzerinde gereksiz trafik yaratmasını istemezsiniz. Tarayıcıların bu gibi tekrarlı
-                    içeriklere bulduğu en uygun çözüm, tekrarlı verileri cihazınızda depolayarak
-                    gerektiğinde internete bağlanmadan siteyi görüntüleyebilir böylece yüklenme hızını
-                    oldukça yükseltir
+                    Manjaro oldukça yapılandırılabilir bir yapı ile beraber gelir.
+                    Pacman üzerinden Blender3D, Inkscape, Gimp, LMMS ve KDENLIVE yükleyerek bir stüdyo sistemi,
+                    VS Code, Python, NodeJS, GCC, VMware, Java, Eclipse,Arduino IDE, Android Studyo gibi yazılımlar ile geliştirici sistemi,
+                    nginx, ufw, docker, php, git, proftpd, btrfs, zfs veya Apache yazılımları ile server sistemi,
+                    Steam, nvidia-bubleblee, optimus manager ve wine yükleyerek oyun sistemi,
+                    qBittorrent, Firefox, Thunderbird, Onlyoffice, Libreoffice, okular yükleyerekde ev bilgisayarı yapılandırabilirsiniz
                 </CardContent>
             </Card>
             <Card {...cardProperty}>
                 <CardHeader
-                    title={<dh.H2>Cache Storage Ne için Kullanılır?</dh.H2>}
+                    title={<dh.H2>Intel, Nvidia ve AMD</dh.H2>}
                 />
                 <CardContent style={{textAlign:"justify"}}>
-                    Tarayıcılar çoğu zaman önbellek durumunu otomatik olarak yöneteceklerdir, ancak gereksiz
-                    önbellek tutma veya önbelleğin temizlenmemesi tarayıcının web sitesinin güncel halini
-                    gösterememesine sebep olur, ayrıca diskte fazla yer tutmasına sebep olabilir.
-                    Cache Storage, web yazılımcılarına önbellekteki verileri kontrollü olarak tutmasına
-                    veya eski verileri güncelleyebilmelerine olanak tanır
+                    Manjaro içerisinde yüklü olarak gelen MHWD aracı sayesinde Intel, AMD ve Nvidia sürücülerinin yazılımlarını otomatik kurar ve yapılandırır.
+                    Manjaro varsayılan olarak açık kaynak kodlu NVidia sürücüsü ile birlikte gelir bu CUDA çekirdeğini, NVidia Displayport ve HDMI çıkışlarını ve Gsync
+                    özelliğini kullanmanıza olanak sağlar ancak oyun oynama, video veya 3d render etme, yüksek fps değerleri alınmaya yönelik durumlarda kapalı kaynak kodlu
+                    NVidia sürücüsüne geçmenize olanak sağlar
                 </CardContent>
             </Card>
             <Card {...cardProperty}>
                 <CardHeader
-                    title={<dh.H2>Cache Strage Teknolojinin Avantajı Nedir?</dh.H2>}
+                    title={<dh.H2>AUR</dh.H2>}
                 />
                 <CardContent style={{textAlign:"justify"}}>
-                    Önbellek deposuna istediğiniz dosyaları, istekleri ve belgeleri yerleştirebilir ve
-                    sunucudan indirmeden önbellekteki veriyi kullanarak işlemleri hızlandırabilir ağdan
-                    tasarruf sağlayabilirsiniz
+                    Manjaro, Arch linüx sisteminin kullandığı AUR paket yöneticisinide kullanır.
+                    AUR, yazılım şirketleri gibi yazılım sağlayıcıların kendisi tarafından resmi olarak
+                    sunulmayan ancak manjaro topluluğunca düzenlenen paketleri indirip derlemenize olanak sağlar. 
                 </CardContent>
             </Card>
             <Card {...cardProperty}>
                 <CardHeader
-                    title={<dh.H2>Cache Strage Teknolojinin Dezavantajı Nedir?</dh.H2>}
+                    title={<dh.H2>Sağlamlık</dh.H2>}
                 />
                 <CardContent style={{textAlign:"justify"}}>
-                    Önbellek deposunun kapasitesi cihazın özelliklerine, bellek kapasitesine
-                    ve depolama alanının hızına göre değişmekteditr. Önbelleğe yerleştireğiniz herhangi bir verinin
-                    hiç bir zaman diske yazıldığı veya uzun süre boyunca orda kalacağı garantisi olmayacaktır.
-                    Özellikle mobil cihazlarda tarayıcılar önbellek depolarını temizleme konusunda oldukça
-                    aceleci davranacaklardır
+                    Linüx dağıtımları, Windows işletim sistemi gibi çöp biriktirme, yığılma ve belirli periotlar ile bakım gerektiren çökme senaryolarının
+                    hiç birini bünyesinde barındırmaz.
+                    Manjaro kişisel ve ofis kullanımda resmi repolarında stabil yazılımları bulundurur ancak AUR repolarında herhangi bir garanti vermez,
+                    AUR, Snap, flatpak ve AppImage kurulumlarında kullanıcının dikkatli olması gerekir.
+                    Bunun dışında operasyonel durumlarda server, ofis, terminal, gömülü sistemler (minipc vs.) ve kişisel kullanımlarda oldukça stabil, hızlı
+                    ve verimli bir işletim sistemidir.
+                </CardContent>
+            </Card>
+            <Card {...cardProperty}>
+                <CardHeader
+                    title={<dh.H2>Steam ve Wine</dh.H2>}
+                />
+                <CardContent style={{textAlign:"justify"}}>
+                    Wine içerisinde bulunan uyumluluk ara katmanları sayesinde Windows için geliştirilmiş ve tek tıkla çalıştırılabilen
+                    uygulamaları Linüx platformunda da sorunsuzca çalıştırılabilir hale getirir.
+                    PlayonLinüx platformu bununda bir üzerine çıkarak windows oyunları için gerekli olan c++ eklentilerinide Linüx platformuna kurarak
+                    windows oyunlarının neredeyse tamamını linüx üzerinde çalışır hale getiriyor.
+                    Valve Software tarafından geliştirilen protondb katmanı sayesinde ise oyunları linüxte en az windows kadar performanslı oynarken
+                    aynı zamanda bilgisayarı kasmadan discord vb. uygulamalardan ekran paylaşımı veya yayın yapabilirsiniz.
+                    Manjaro, Steam platformunda bulunan ilk 100'de bulunan 67 oyunu tek tıkla 19 oyunu ise belirli eklentiler ile sorunsuzca çalıştırabilmektedir.
                 </CardContent>
             </Card>
         </Box>

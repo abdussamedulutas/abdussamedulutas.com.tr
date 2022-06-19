@@ -56,16 +56,9 @@ export default function Content({select,...props})
                         </CollapsedListItem>
                         <Divider />
                         <CollapsedListItem primary="Manjaro Linux">
-                            <RouteItem soon url="/manjaro/neden" title="Neden Manjaro?" text="Güncel Linüx Kernel, Python, JVM, GCC, PHP, Nodejs Hızlandırma Teknolojisi" />
+                            <RouteItem url="/manjaro/nedir" title="Manjaro OS Nedir?" text="Güncel Linüx Kernel, Python, JVM, GCC, PHP" />
                             <Divider />
-                            <RouteItem soon url="/manjaro/kurulum" title="Güvenli ve Hızlı Kurulum" text="64bit Makine, Kurmadan Önce Canlı Test Etme" />
-                            <Divider />
-                            <RouteItem soon url="/manjaro/ozellestirme" title="Kişiselleştirme" text="KDE Masaüstü, Dil, Zaman, Bölge ve Güç Ayarları" />
-                            <Divider />
-                            <RouteItem soon url="/manjaro/yazilimlar" title="Pacman / Pamac" text="Hızlı Yazılım Kurma Kaldırma ve Sistem Güncellemesi Güncelleme" />
-                            <Divider />
-                            <RouteItem soon url="/manjaro/mhwd" title="MHWD" text="AMD, NVidia, İntel Çoklu Ekran Kartı Sistemleri İçin Driver Kurma Kaldırma" />
-                            <Divider />
+                            <RouteItem url="/manjaro/neden" title="Neden Manjaro?" text="Neden Manjaro'ya Geçeyim?" />
                         </CollapsedListItem>
                         <Divider />
                         <CollapsedListItem primary="Kendi Projelerim">
