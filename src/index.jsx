@@ -25,6 +25,15 @@ import Ffmpeg from "./pages/backend/ffmpeg/index"
 import Nodejs from "./pages/backend/nodejs/index"
 import Nginx from "./pages/backend/nginx/index"
 import StunTurn from "./pages/backend/turnstun/index"
+import Mariadb from "./pages/backend/mariadb/index"
+
+
+import MarjaroNedir from "./pages/manjaro/manjaronedir";
+import NedenManjaro from "./pages/manjaro/nedenmanjaro";
+
+
+
+import HemexJS from "./pages/myprojects/HemexJS/index";
 
 import Iletisim from "./pages/iletisim";
 import { useDispatch,useSelector } from "react-redux";
@@ -74,6 +83,7 @@ function App()
                     <Route path="/backend/nodejs" component={Nodejs}/>
                     <Route path="/backend/nginx" component={Nginx}/>
                     <Route path="/backend/stunturn" component={StunTurn}/>
+                    <Route path="/backend/mariadb" component={Mariadb}/>
 
                     <Route path="/frontend/webrtc" component={Webrtc}/>
                     <Route path="/frontend/react" component={ReactJS}/>
@@ -83,6 +93,11 @@ function App()
                     <Route path="/frontend/webworker" component={webworker}/>
                     <Route path="/frontend/mediastream" component={mediastream}/>
                     <Route path="/frontend/cachestorage" component={cachestorage}/>
+                    
+                    <Route path="/github/hemexjs" component={HemexJS}/>
+
+                    <Route path="/manjaro/nedir" component={MarjaroNedir}/>
+                    <Route path="/manjaro/neden" component={NedenManjaro}/>
 
                     <Route path="/iletisim" component={Iletisim}/>
                     <Route exact path="/"> <Redirect /> </Route>
@@ -108,3 +123,23 @@ render(
     </Provider>,
     rootContainer
 );
+
+
+
+
+(async e => {
+    if ('serviceWorker' in navigator) {
+        try {
+            const registration = await navigator.serviceWorker.register('serviceworker.js');
+            if (registration.installing) {
+                console.log('Service worker installing');
+            } else if (registration.waiting) {
+                console.log('Service worker installed');
+            } else if (registration.active) {
+                console.log('Service worker active');
+            }
+        } catch (error) {
+            console.error(`Registration failed with ${error}`);
+        }
+    }
+})();

@@ -54,21 +54,21 @@ export default function Ozgecmis()
                                 ["Frameworkler", "Laravel, ReactJS, NodeJS, WebSocket, Hemex Text Mining, QT5 C++, ASP.NET"],
                                 ["Aşina Olduğu Teknolojiler","C/C++/C#, BashScript, TypeScript, Java, Selenium Otomasyon, FFMPEG"]
                             ].map((e,arr,key) => {
-                                return <>
-                                {!isMobile ? <ListItem key={key}>
+                                return <React.Fragment key={key}>
+                                {!isMobile ? <ListItem>
                                     <ListItemText sx={{flex:5}}>
                                         {e[0]}
                                     </ListItemText>
                                     <ListItemText sx={{flex:10}}>
                                         {e[1]}
                                     </ListItemText>
-                                </ListItem> : <ListItem key={key}>
+                                </ListItem> : <ListItem>
                                     <ListItemText secondary={e[1]}>
                                         {e[0]}
                                     </ListItemText>
                                 </ListItem>}
                                 <Divider />
-                                </>
+                                </React.Fragment>
                             })}
                         </List>
                         <dh.H3 textAlign="center">Eğitim</dh.H3>
@@ -121,8 +121,8 @@ export default function Ozgecmis()
                                 ["Google",<Google />, "@saqutsoftware","mailto:saqutsoftware@gmail.com"],
                                 ["Delphican",<Google />, "@saqutsoftware","mailto:saqutsoftware@gmail.com"]
                             ].map((e,arr,key) => {
-                                return <>
-                                {!isMobile ? <ListItemButton key={key} onClick={() => window.open(e[3])}>
+                                return <React.Fragment key={key}>
+                                {!isMobile ? <ListItemButton onClick={() => window.open(e[3])}>
                                     <ListItemIcon>
                                         {e[1]}
                                     </ListItemIcon>
@@ -132,7 +132,7 @@ export default function Ozgecmis()
                                     <ListItemText sx={{flex:20}}>
                                         {e[2]}
                                     </ListItemText>
-                                </ListItemButton> : <ListItemButton key={key} onClick={() => window.open(e[3])}>
+                                </ListItemButton> : <ListItemButton onClick={() => window.open(e[3])}>
                                     <ListItemIcon>
                                         {e[1]}
                                     </ListItemIcon>
@@ -141,14 +141,14 @@ export default function Ozgecmis()
                                     </ListItemText>
                                 </ListItemButton>}
                                 <Divider />
-                                </>
+                                </React.Fragment>
                             })}
                         </List>
                         <dh.H3 textAlign="center">Referanslar</dh.H3>
                         <List>
                             {[
                                 ["Yasin İLKAYA", "https://yasinilkaya.com.tr/"],
-                                ["Yakup ULUTAŞ","https://yakupulutas.com/"]
+                                ["Yakup ULUTAŞ","https://blog.yakupulutas.com/"]
                             ].map((e,arr,key) => {
                                 return <>
                                 {!isMobile ? <ListItemButton key={key} onClick={() => window.open(e[1])}>

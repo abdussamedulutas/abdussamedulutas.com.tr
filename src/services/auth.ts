@@ -1,5 +1,8 @@
 import axios from "axios";
 
+
+// example not using apis
+
 export async function login(email:string, password:string)
 {
     let {data} = await axios.post("/api/login",{email,password});

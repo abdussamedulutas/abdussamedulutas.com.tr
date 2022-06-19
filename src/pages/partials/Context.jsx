@@ -49,27 +49,20 @@ export default function Content({select,...props})
                             <Divider />
                             <RouteItem url="/backend/stunturn" title="TURN/STUN" text="Görüntülü / Sesli Görüşme / Ekran Paylaşımı" />
                             <Divider />
-                            <RouteItem soon url="/backend/mysql" title="MariaDB" text="İlişkisel Veritabanı" />
+                            <RouteItem url="/backend/MariaDB" title="MariaDB" text="İlişkisel Veritabanı" />
                             <Divider />
                             <RouteItem soon url="/backend/redis" title="Redis" text="Bellek Tabanlı Önbellek Depolama" />
                             <Divider />
                         </CollapsedListItem>
                         <Divider />
                         <CollapsedListItem primary="Manjaro Linux">
-                            <RouteItem soon url="/manjaro/neden" title="Neden Manjaro?" text="Güncel Linüx Kernel, Python, JVM, GCC, PHP, Nodejs Hızlandırma Teknolojisi" />
+                            <RouteItem url="/manjaro/nedir" title="Manjaro OS Nedir?" text="Güncel Linüx Kernel, Python, JVM, GCC, PHP" />
                             <Divider />
-                            <RouteItem soon url="/manjaro/kurulum" title="Güvenli ve Hızlı Kurulum" text="64bit Makine, Kurmadan Önce Canlı Test Etme" />
-                            <Divider />
-                            <RouteItem soon url="/manjaro/ozellestirme" title="Kişiselleştirme" text="KDE Masaüstü, Dil, Zaman, Bölge ve Güç Ayarları" />
-                            <Divider />
-                            <RouteItem soon url="/manjaro/yazilimlar" title="Pacman / Pamac" text="Hızlı Yazılım Kurma Kaldırma ve Sistem Güncellemesi Güncelleme" />
-                            <Divider />
-                            <RouteItem soon url="/manjaro/mhwd" title="MHWD" text="AMD, NVidia, İntel Çoklu Ekran Kartı Sistemleri İçin Driver Kurma Kaldırma" />
-                            <Divider />
+                            <RouteItem url="/manjaro/neden" title="Neden Manjaro?" text="Neden Manjaro'ya Geçeyim?" />
                         </CollapsedListItem>
                         <Divider />
                         <CollapsedListItem primary="Kendi Projelerim">
-                            <RouteItem soon url="/github/hemexjs" title="HemexJS" text="Metin Madenciliği Format Biçimlendirme, İşleme ve Dönüştürme Kütüphanesi" />
+                            <RouteItem url="/github/hemexjs" title="HemexJS" text="Metin Madenciliği Format Biçimlendirme, İşleme ve Dönüştürme Kütüphanesi" />
                             <Divider />
                         </CollapsedListItem>
                         <Divider />
@@ -93,16 +86,17 @@ export default function Content({select,...props})
 
 function MobileSwitcher({children})
 {
+    let {drawerStatus} = useSelector(e => e.defaultRedux);
+    let dispatch = useDispatch();
     let isMobile = useMediaQuery("(max-width: 768px)");
-    let [drawerStatus, setDrawerStatus] = useState(false);
     return <>{isMobile ? <SwipeableDrawer
         PaperProps={{
             style:{width:"250px"}
         }}
         anchor={"left"}
         open={drawerStatus}
-        onClose={e => setDrawerStatus(false)}
-        onOpen={e => setDrawerStatus(true)}
+        onClose={e => dispatch({type:"closeNavbar"})}
+        onOpen={e => dispatch({type:"openNavbar"})}
         children={children}
     /> : <Box sx={{width:{sm:"20vw",xs:"100%"},maxWidth:{sm:"300px"},minWidth:{sm:"200px"},p:{md:1,sm:0}}} mb={2}>
             <Paper variant="elevation" elevation={5} style={{width:"100%",height:"100%",display:"flex",flexDirection:"column"}}>
